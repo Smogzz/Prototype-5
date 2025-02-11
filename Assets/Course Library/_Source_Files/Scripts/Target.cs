@@ -35,12 +35,13 @@ public class Target : MonoBehaviour
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
     }    
    
-    private void OnMouseDown() {
+    private void OnMouseDown()
+     {
         Destroy(gameObject);
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         gameManager.UpdateScore(pointValue);
     }
-   private void OntriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other)
    {
      Destroy(gameObject);
    }
