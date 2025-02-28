@@ -13,14 +13,16 @@ public class Target : MonoBehaviour
      private GameManager gameManager;
      public int pointValue;
      public ParticleSystem explosionParticle;
+     private float spawnRate = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
+       
         targetRb=GetComponent<Rigidbody>();
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(Randomtorque(), Randomtorque(), Randomtorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPos();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     Vector3 RandomForce()
     {
