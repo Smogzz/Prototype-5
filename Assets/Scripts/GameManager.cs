@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
         spawnRate /= difficulty;
+        titleScreen.gameObject.SetActive(false);
     }
    
     public void GameOver()
